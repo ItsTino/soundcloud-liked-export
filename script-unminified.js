@@ -1,0 +1,29 @@
+javascript:(function() {
+    var songs = [['Artist', 'Song Name', 'URL']];
+    
+    document.querySelectorAll('.soundList__item').forEach(function(item) {
+        var usernameEl = item.querySelector('.soundTitle__username .soundTitle__usernameText');
+        var titleEl = item.querySelector('.soundTitle__title');
+        var linkEl = item.querySelector('.soundTitle__title');
+        
+        if (usernameEl && titleEl && linkEl) {
+            var artist = usernameEl.textContent.trim();
+            var title = titleEl.textContent.trim();
+            var url = 'https://soundcloud.com' + linkEl.getAttribute('href');
+            songs.push([artist, title, url]);
+        }
+    });
+    
+    var csv = songs.map(function(row) {
+        return row.map(function(cell) {
+            return '"' + cell.replace(/"/g, '""') + '"';
+        }).join(',');
+    }).join('\n');
+    
+    var blob = new Blob([csv], {type: 'text/csv'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'soundcloud-likes.csv';
+    a.click();
+})();
