@@ -28,6 +28,10 @@ Scroll all the way down to the bottom of the page, ensuring all your liked track
 
 ### Step 4: Add the Bookmarklet to Your Browser
 
+**Quick Method:** You can drag the `soundcloud-bookmarklet.js` file from the file list at the top of this page directly into your bookmarks bar.
+
+**Manual Method:**
+
 #### Chrome / Edge / Brave:
 1. Show your bookmarks bar (Ctrl+Shift+B on Windows/Linux, Cmd+Shift+B on Mac)
 2. Right-click on the bookmarks bar and select "Add page" or "Add bookmark"
